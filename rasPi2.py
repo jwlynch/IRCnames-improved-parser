@@ -149,12 +149,9 @@ names = []
 
 while True:
     read_buffer += (s.recv(1024).decode())
-    print("read next 1024")
     lines = read_buffer.split('\r\n')
     read_buffer = lines.pop();     # that semicolon is in both copies of code
     for line in lines:
-        print('for line in lines')
-        print( 'response code is ' + str(response_code) )
         # Here, we have one line in the var line, so now, let's pull
         # it apart and build a dict with everything we find.
 
