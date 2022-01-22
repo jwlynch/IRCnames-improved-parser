@@ -22,6 +22,11 @@ def dex(item, lst):
 # at first, this will be each hook
 debugSects = []
 
+def debugSectsContains(sectName):
+    result = dex(sectName, debugSects) != -1
+
+    return result
+
 response_dict = {}
 
 response_dict["001"] = "RPL_WELCOME"
