@@ -155,10 +155,6 @@ while True:
     for line in lines:
         print('for line in lines')
         print( 'response code is ' + str(response_code) )
-        if response_code == RPL_NAMREPLY:
-            print('resp. was RPL_NAMREPLY')
-            names_list = response[3].split(':')[1]
-            names += names_list.split(' ')
         if response_code == RPL_ENDOFNAMES:
             # Display the names
             print('resp. was RPL_ENDOFNAMES')
