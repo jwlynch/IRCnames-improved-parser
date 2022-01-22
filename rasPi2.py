@@ -19,6 +19,9 @@ def dex(item, lst):
     finally:
         return result
 
+# at first, this will be each hook
+debugSects = []
+
 response_dict = {}
 
 response_dict["001"] = "RPL_WELCOME"
