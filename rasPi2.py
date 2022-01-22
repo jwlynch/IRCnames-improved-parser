@@ -163,6 +163,30 @@ while True:
 
         # separate lines into "words" (things between spaces)
         llist = line.split(" ")
+
+        # within the line parser, when looking at llist,
+        # the first (leftmost) 'word' might start with a @
+        # if it does, it's a "tags" word, so we pull it out
+        # of the llist, save it, and indicate we found it.
+        #
+        # same thing, for a word starting with :, this is called
+        # a 'prefix'.
+        #
+        # a line can have 0 or 1 "tags" word, and 0 or 1 "prefix" word
+        tags_p = False
+        prefix_p = False
+
+        if llist[0].startswith('@'):
+            tagWord = llist.pop(0)
+            tags_p = True
+            lineDict["tags"] = tagWord[1:] # all but the @
+
+        if llist[0].startswith(":"):
+            prefixWord = llist.pop(0)
+            prefix_p = True
+            lineDict["prefix"] = prefixWord[1:] # all but the :
+
+        # we've taken out the tags word and the prefix from the llist.
             # Display the names
             print('resp. was RPL_ENDOFNAMES')
             print( '\r\nUsers in %(channel)s:' % irc)
