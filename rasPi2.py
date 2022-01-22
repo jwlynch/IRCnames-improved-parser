@@ -155,12 +155,16 @@ while True:
     for line in lines:
         print('for line in lines')
         print( 'response code is ' + str(response_code) )
-        if response_code == RPL_ENDOFNAMES:
+        # Here, we have one line in the var line, so now, let's pull
+        # it apart and build a dict with everything we find.
+
+        # pull off tags and origin words from line
+        lineDict = {}
+
+        # separate lines into "words" (things between spaces)
+        llist = line.split(" ")
             # Display the names
             print('resp. was RPL_ENDOFNAMES')
             print( '\r\nUsers in %(channel)s:' % irc)
             for name in names:
                 print(name)
-            names = []
-            time.sleep(irc['namesinterval'])
-            s.send(('NAMES %(channel)s\r\n' % irc).encode())
