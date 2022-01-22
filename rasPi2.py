@@ -196,6 +196,22 @@ while True:
 
         # we've taken out a tags word, a prefix (if either exists), and
         # the command. what we're left with, is args.
+
+        # I'll comment the arg parser later.
+
+        # (next, parse args... let's see what's there)
+        colonlastarg_p = False
+        arglist = []
+        lastarglist = []
+        mode = "singleArgs"
+        for arg in llist:
+                        arglist.append(arg)
+
+        lineDict["args"] = arglist
+
+        # Here, we are done looking at the line, and have a fully
+        # formed dict (in var lineDict) with all the info from the line
+        # so, below this point, we could use just the lineDict
             # Display the names
             print('resp. was RPL_ENDOFNAMES')
             print( '\r\nUsers in %(channel)s:' % irc)
