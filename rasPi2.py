@@ -10,6 +10,15 @@ def raw_line_to_responsecode(rawLine):
 RPL_NAMREPLY = '353'    # irc status modes
 RPL_ENDOFNAMES = '366'  # tells when certain operations have been completed
 
+# index of item in list, or -1 if ValueError
+def dex(item, lst):
+    result = -1
+
+    try:
+        result = lst.index(item)
+    finally:
+        return result
+
 response_dict = {}
 
 response_dict["001"] = "RPL_WELCOME"
