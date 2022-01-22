@@ -187,6 +187,15 @@ while True:
             lineDict["prefix"] = prefixWord[1:] # all but the :
 
         # we've taken out the tags word and the prefix from the llist.
+        #
+        # Now, the leftmost word in llist is the command (aka response_code)
+
+        # now, llist[0] is the command (used to call it response_code)
+        commandWord = llist.pop(0)
+        lineDict["command"] = commandWord
+
+        # we've taken out a tags word, a prefix (if either exists), and
+        # the command. what we're left with, is args.
             # Display the names
             print('resp. was RPL_ENDOFNAMES')
             print( '\r\nUsers in %(channel)s:' % irc)
