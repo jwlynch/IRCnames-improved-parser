@@ -206,6 +206,8 @@ while True:
         mode = "singleArgs"
         for arg in llist:
             if mode == "singleArgs":
+                if arg.startswith(":"):
+                else:
                         arglist.append(arg)
             else:
                 lastarglist.append(arg)
