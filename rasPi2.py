@@ -207,6 +207,8 @@ while True:
         for arg in llist:
             if mode == "singleArgs":
                         arglist.append(arg)
+            else:
+                lastarglist.append(arg)
 
         lineDict["args"] = arglist
 
