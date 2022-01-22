@@ -154,8 +154,6 @@ while True:
     read_buffer = lines.pop();     # that semicolon is in both copies of code
     for line in lines:
         print('for line in lines')
-        response = line.rstrip().split(' ', 3)
-        response_code = response[1]
         print( 'response code is ' + str(response_code) )
         if response_code == RPL_NAMREPLY:
             print('resp. was RPL_NAMREPLY')
