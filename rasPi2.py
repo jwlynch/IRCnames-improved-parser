@@ -207,6 +207,10 @@ while True:
         for arg in llist:
             if mode == "singleArgs":
                 if arg.startswith(":"):
+                    firstOfLastArg = arg[1:]
+                    lastarglist.append(firstOfLastArg)
+                    mode = "lastarg"
+                    colonlastarg_p = True
                 else:
                         arglist.append(arg)
             else:
