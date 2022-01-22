@@ -141,8 +141,8 @@ s.send(('USER %(username)s %(hostname)s %(servername)s :%(realname)s\r\n' % user
 print('sent USER %(username)s %(hostname)s %(servername)s :%(realname)s\r\n' % user)
 s.send(('JOIN %(channel)s\r\n' % irc).encode())
 print('sent JOIN %(channel)s\r\n' % irc)
-s.send(('NAMES %(channel)s\r\n' % irc).encode())
-print('sent NAMES %(channel)s\r\n' % irc)
+#s.send(('NAMES %(channel)s\r\n' % irc).encode())
+#print('sent NAMES %(channel)s\r\n' % irc)
 
 read_buffer = ''
 names = []
