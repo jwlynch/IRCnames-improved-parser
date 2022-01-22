@@ -218,6 +218,9 @@ while True:
                         lastarglist.append(arg)
             else:
                 lastarglist.append(arg)
+        if colonlastarg_p:
+            lastarg = " ".join(lastarglist)
+            arglist.append(lastarg)
 
         lineDict["args"] = arglist
 
