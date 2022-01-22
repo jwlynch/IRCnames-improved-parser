@@ -212,7 +212,10 @@ while True:
                     mode = "lastarg"
                     colonlastarg_p = True
                 else:
+                    if mode == "singleArgs":
                         arglist.append(arg)
+                    else:
+                        lastarglist.append(arg)
             else:
                 lastarglist.append(arg)
 
