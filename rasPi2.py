@@ -282,3 +282,6 @@ while True:
 
         # if we get a server ping...
         if commandWord.lower() == 'ping':
+
+            # we want to send the args back in the "pong", so 'join' them
+            ping_args = " ".join(lineDict["args"])
