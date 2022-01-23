@@ -271,6 +271,9 @@ while True:
             # don't do another /names
             #names = []
 
+            # don't sleep this way, it blocks everything while sleeping
+            #time.sleep(irc['namesinterval'])
+
             # don't do another /names
             #s.send(('NAMES %(channel)s\r\n' % irc).encode())
 
