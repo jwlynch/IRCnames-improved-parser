@@ -285,7 +285,7 @@ while True:
         # we get when someone does: /ping some-nick.
 
         # if we get a server ping...
-        if commandWord.lower() == 'ping':
+        if command.lower() == 'ping':
 
             # we want to send the args back in the "pong", so 'join' them
             ping_args = " ".join(lineDict["args"])
