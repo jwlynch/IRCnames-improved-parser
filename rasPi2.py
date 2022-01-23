@@ -2,11 +2,6 @@
 
 import sys, socket, time
 
-def raw_line_to_responsecode(rawLine):
-    result = rawLine
-
-    return result
-
 RPL_NAMREPLY = '353'    # irc status modes
 RPL_ENDOFNAMES = '366'  # tells when certain operations have been completed
 
