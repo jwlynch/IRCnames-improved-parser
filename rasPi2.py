@@ -268,3 +268,9 @@ while True:
             print( '\r\nUsers in %(channel)s:' % irc)
             for name in names:
                 print(name)
+            # don't do another /names
+            #names = []
+
+            # don't do another /names
+            #s.send(('NAMES %(channel)s\r\n' % irc).encode())
+
