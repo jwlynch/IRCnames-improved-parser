@@ -286,3 +286,4 @@ while True:
             # we want to send the args back in the "pong", so 'join' them
             ping_args = " ".join(lineDict["args"])
             pong = f"PONG {ping_args}" # this is what to send to the server
+            s.send(pong.encode()) # send it
