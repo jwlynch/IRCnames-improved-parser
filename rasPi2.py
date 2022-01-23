@@ -241,6 +241,9 @@ while True:
         # Here, we are done looking at the line, and have a fully
         # formed dict (in var lineDict) with all the info from the line
         # so, below this point, we could use just the lineDict
+
+        print("line dict is " + repr(lineDict))
+
             # Display the names
             print('resp. was RPL_ENDOFNAMES')
             print( '\r\nUsers in %(channel)s:' % irc)
