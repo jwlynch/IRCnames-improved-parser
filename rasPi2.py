@@ -244,6 +244,10 @@ while True:
 
         print("line dict is " + repr(lineDict))
 
+        # here, we get whatever's needed from the lineDict
+
+        command = lineDict["command"]
+
             # Display the names
             print('resp. was RPL_ENDOFNAMES')
             print( '\r\nUsers in %(channel)s:' % irc)
