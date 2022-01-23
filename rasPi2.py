@@ -277,3 +277,8 @@ while True:
             # don't do another /names
             #s.send(('NAMES %(channel)s\r\n' % irc).encode())
 
+        # this handles server pings (which are different than those
+        # we get when someone does: /ping some-nick.
+
+        # if we get a server ping...
+        if commandWord.lower() == 'ping':
