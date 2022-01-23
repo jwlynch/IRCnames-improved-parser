@@ -265,7 +265,6 @@ while True:
         if command == RPL_ENDOFNAMES:
             names = nameStr.split(" ") # split names into a list
             # Display the names
-            print('resp. was RPL_ENDOFNAMES')
             print( '\r\nUsers in %(channel)s:' % irc)
             for name in names:
                 print(name)
