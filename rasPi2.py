@@ -286,8 +286,12 @@ while True:
 
         # if we get a server ping...
         if command.lower() == 'ping':
+            print("got server ping")
 
+            print("form args from the ping sent to me")
             # we want to send the args back in the "pong", so 'join' them
             ping_args = " ".join(lineDict["args"])
+            print("form the entire response string to send to the server")
             pong = f"PONG {ping_args}" # this is what to send to the server
+            print(f"send this: {pong}")
             s.send(pong.encode()) # send it
