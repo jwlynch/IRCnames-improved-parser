@@ -248,6 +248,22 @@ while True:
 
         command = lineDict["command"]
 
+        # print the response code according to whether that code appears
+        # in the response_dict.
+        if command in response_dict:
+            command_label = response_dict[command]
+            print( f'command is {command}, {command_label}' )
+        else:
+            print( f'command is {command}' )
+
+        if command == RPL_NAMREPLY:
+            nameStr = lineDict["args"][-1] # get last arg, a space-separated
+                                           # string with the names on the
+                                           # channel
+            # print the names string
+            print("RPL_NAMREPLY args: " + repr(lineDict["args"]) )
+        if command == RPL_ENDOFNAMES:
+            names = nameStr.split(" ") # split names into a list
             # Display the names
             print('resp. was RPL_ENDOFNAMES')
             print( '\r\nUsers in %(channel)s:' % irc)
