@@ -87,9 +87,9 @@ def raw_line_parse(line):
         else:
             lastarglist.append(arg)
 
-        if colonlastarg_p:
-            lastarg = " ".join(lastarglist)
-            arglist.append(lastarg)
+    if colonlastarg_p:
+        lastarg = " ".join(lastarglist)
+        arglist.append(lastarg)
 
     lineDict["args"] = arglist
 
