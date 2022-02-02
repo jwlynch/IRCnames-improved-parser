@@ -1,0 +1,84 @@
+
+ "@account=stanley;solanum.chat/identified :Stanley!~stanley@d66-183-88-69.bchsia.telus.net JOIN #postgresql stanley :ZNC - https://znc.in"
+
+======================================
+
+cindy@opti7010:~$ python3
+Python 3.9.2 (default, Feb 28 2021, 17:03:44) 
+[GCC 10.2.1 20210110] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> line =  "@account=stanley;solanum.chat/identified :Stanley!~stanley@d66-183-88-69.bchsia.telus.net JOIN #postgresql stanley :ZNC - https://znc.in"
+>>> lineDict = {}
+>>> llist = line.split(" ")
+>>> llist
+['@account=stanley;solanum.chat/identified', ':Stanley!~stanley@d66-183-88-69.bchsia.telus.net', 'JOIN', '#postgresql', 'stanley', ':ZNC', '-', 'https://znc.in']
+>>> tagWord = llist.pop(0)
+>>> tagWord
+'@account=stanley;solanum.chat/identified'
+>>> llist
+[':Stanley!~stanley@d66-183-88-69.bchsia.telus.net', 'JOIN', '#postgresql', 'stanley', ':ZNC', '-', 'https://znc.in']
+>>> lineDict["tags"] = tagWord[1:]
+>>> lineDict
+{'tags': 'account=stanley;solanum.chat/identified'}
+>>>  prefixWord = llist.pop(0)
+  File "<stdin>", line 1
+    prefixWord = llist.pop(0)
+IndentationError: unexpected indent
+>>> prefixWord = llist.pop(0)
+>>> llist
+['JOIN', '#postgresql', 'stanley', ':ZNC', '-', 'https://znc.in']
+>>> lineDict["prefix"] = prefixWord[1:]
+>>> lineDict
+{'tags': 'account=stanley;solanum.chat/identified', 'prefix': 'Stanley!~stanley@d66-183-88-69.bchsia.telus.net'}
+>>> commandWord = llist.pop(0)
+>>> commandWord
+'JOIN'
+>>> line
+'@account=stanley;solanum.chat/identified :Stanley!~stanley@d66-183-88-69.bchsia.telus.net JOIN #postgresql stanley :ZNC - https://znc.in'
+>>> lineDict["command"] = commandWord
+>>> lineDict
+{'tags': 'account=stanley;solanum.chat/identified', 'prefix': 'Stanley!~stanley@d66-183-88-69.bchsia.telus.net', 'command': 'JOIN'}
+>>> arglist = []
+>>> lastarglist = []
+>>> llist
+['#postgresql', 'stanley', ':ZNC', '-', 'https://znc.in']
+>>> colonlastarg_p = False
+>>> mode = "singleArgs"
+>>> mode
+'singleArgs'
+>>> arglist.append('#postgresql')
+>>> arglist
+['#postgresql']
+>>> arglist.append('stanley')
+>>> arglist
+['#postgresql', 'stanley']
+>>> firstOfLastArg = 'ZNC'
+>>> firstOfLastArg
+'ZNC'
+>>> lastarglist.append(firstOfLastArg)
+>>> lastarglist
+['ZNC']
+>>> mode = "lastarg"
+>>> colonlastarg_p = True
+>>> lastarglist.append('-')
+>>> lastarglist
+['ZNC', '-']
+>>> lastarglist.append('https://znc.in')
+>>> lastarglist
+['ZNC', '-', 'https://znc.in']
+>>> colonlastarg_p
+True
+>>> lastarg = " ".join(lastarglist)
+>>> lastarg
+'ZNC - https://znc.in'
+>>> line
+'@account=stanley;solanum.chat/identified :Stanley!~stanley@d66-183-88-69.bchsia.telus.net JOIN #postgresql stanley :ZNC - https://znc.in'
+>>> arglist.append(lastarg)
+>>> arglist
+['#postgresql', 'stanley', 'ZNC - https://znc.in']
+>>> lineDict["args"] = arglist
+>>> lineDict
+{'tags': 'account=stanley;solanum.chat/identified', 'prefix': 'Stanley!~stanley@d66-183-88-69.bchsia.telus.net', 'command': 'JOIN', 'args': ['#postgresql', 'stanley', 'ZNC - https://znc.in']}
+>>> 
+===================================================
+
