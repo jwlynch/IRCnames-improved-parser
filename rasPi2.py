@@ -48,6 +48,8 @@ def doReadConfig(path):
 
     return(result)
 
+parse_result = doReadConfig(configFilePath)
+
 irc = {
     'host' : 'irc.libera.chat',  # Fully qualified domain name of irc server
     'port' : 6667,
