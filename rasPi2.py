@@ -36,7 +36,6 @@ pathname = Path(foo.__code__.co_filename).parent.__str__()
 configFilePath = Path(pathname) / "IRCnamesBot.cfg"
 
 def doReadConfig(path):
-    configPath = path
     parser = ConfigParser()
     result = parser.read(path)
 
