@@ -33,6 +33,8 @@ def foo():
     pass
 pathname = Path(foo.__code__.co_filename).parent.__str__()
 
+configFilePath = Path(pathname) / "IRCnamesBot.cfg"
+
 irc = {
     'host' : 'irc.libera.chat',  # Fully qualified domain name of irc server
     'port' : 6667,
