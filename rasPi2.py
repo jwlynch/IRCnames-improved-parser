@@ -28,6 +28,11 @@ def debugSectsContains(sectName):
 
     return result
 
+# nedbat's hack to replace __file__ (used to locate this script's dir)
+def foo():
+    pass
+pathname = Path(foo.__code__.co_filename).parent.__str__()
+
 irc = {
     'host' : 'irc.libera.chat',  # Fully qualified domain name of irc server
     'port' : 6667,
@@ -42,11 +47,6 @@ user = {
     'servername' : 'irc.libera.chat',
     'realname' : 'Raspberry Pi Names Bot' # add a descriptive message
 }
-
-# nedbat's hack to replace __file__ (used to locate this script's dir)
-def foo():
-    pass
-pathname = Path(foo.__code__.co_filename).parent.__str__()
 
 '''
 class socket.socket(family=AF_INET, type=SOCK_STREAM, proto=0, fileno=None)
