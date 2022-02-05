@@ -35,6 +35,17 @@ pathname = Path(foo.__code__.co_filename).parent.__str__()
 
 configFilePath = Path(pathname) / "IRCnamesBot.cfg"
 
+def doReadConfig(path):
+    configPath = path
+    parser = ConfigParser()
+    result = parser.read(path)
+
+    if dex(path, result) == -1:
+        print(f"ERROR, did not find {path} in parser output")
+        exit()
+
+    return(result)
+
 irc = {
     'host' : 'irc.libera.chat',  # Fully qualified domain name of irc server
     'port' : 6667,
