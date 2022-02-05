@@ -43,6 +43,11 @@ user = {
     'realname' : 'Raspberry Pi Names Bot' # add a descriptive message
 }
 
+# nedbat's hack to replace __file__ (used to locate this script's dir)
+def foo():
+    pass
+pathname = Path(foo.__code__.co_filename).parent.__str__()
+
 '''
 class socket.socket(family=AF_INET, type=SOCK_STREAM, proto=0, fileno=None)
 Create a socket object.  AF_INET is the address family (the default).
