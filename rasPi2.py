@@ -45,9 +45,9 @@ def doReadConfig(path):
         print(f"ERROR, did not find {path} in parser output")
         exit()
 
-    return(result)
+    return(parser)
 
-parse_result = doReadConfig(configFilePath)
+parser = doReadConfig(configFilePath)
 
 exit()
 
