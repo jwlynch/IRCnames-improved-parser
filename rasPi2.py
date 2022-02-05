@@ -6,6 +6,7 @@ from response_codes import response_dict
 from irc_line_parser import raw_line_parse
 
 from configparser import ConfigParser
+from pathlib import Path
 
 RPL_NAMREPLY = '353'    # irc status modes
 RPL_ENDOFNAMES = '366'  # tells when certain operations have been completed
