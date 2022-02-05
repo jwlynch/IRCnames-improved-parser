@@ -40,6 +40,8 @@ def doReadConfig(path):
     parser = ConfigParser()
     result = parser.read(path)
 
+    print(f"doReadConfig output is {repr(result)}")
+    print(f"configFilePath is {path}")
     if dex(path, result) == -1:
         print(f"ERROR, did not find {path} in parser output")
         exit()
