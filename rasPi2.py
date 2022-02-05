@@ -45,9 +45,22 @@ def doReadConfig(path):
         print(f"ERROR, did not find {path} in parser output")
         exit()
 
-    return(parser)
+    result = {}
 
-parser = doReadConfig(configFilePath)
+    # overall result is a dict, populated with the section names...
+    for section in parser.sections():
+        # ... and each section name gets its own dict
+        result[section] = {}
+
+        # sections get populated with options, each option finally gets a value
+        for opt in parser.options(section):
+            # in each option, put the value of that option
+            result[section][opt] = parser[section][opt]
+        
+
+    return(result)
+
+config_dict = doReadConfig(configFilePath)
 
 exit()
 
