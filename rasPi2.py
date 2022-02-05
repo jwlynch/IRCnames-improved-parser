@@ -39,6 +39,9 @@ def doReadConfig(path):
     parser = ConfigParser()
     result = parser.read(path)
 
+    result_paths = [Path(p) for p in result]
+
+    if dex(path, result_paths) == -1:
         print(f"ERROR, did not find {path} in parser output")
         exit()
 
