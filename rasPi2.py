@@ -64,20 +64,20 @@ config_dict = doReadConfig(configFilePath)
 
 exit()
 
-irc = {
-    'host' : 'irc.libera.chat',  # Fully qualified domain name of irc server
-    'port' : 6667,
-    'channel' : '#jim',
-    'namesinterval' : 15
-}
+#irc = {
+#    'host' : 'irc.libera.chat',  # Fully qualified domain name of irc server
+#    'port' : 6667,
+#    'channel' : '#jim',
+#    'namesinterval' : 15
+#}
 
-user = {
-    'nick' : 'jm-bot',                   # use nick-bot
-    'username' : 'botuser',               # username-bot
-    'hostname' : 'localhost',
-    'servername' : 'irc.libera.chat',
-    'realname' : 'Raspberry Pi Names Bot' # add a descriptive message
-}
+#user = {
+#    'nick' : 'jm-bot',                   # use nick-bot
+#    'username' : 'botuser',               # username-bot
+#    'hostname' : 'localhost',
+#    'servername' : 'irc.libera.chat',
+#    'realname' : 'Raspberry Pi Names Bot' # add a descriptive message
+#}
 
 '''
 class socket.socket(family=AF_INET, type=SOCK_STREAM, proto=0, fileno=None)
