@@ -60,8 +60,6 @@ def doReadConfig(path):
 
     return(result)
 
-
-exit()
 params = doReadConfig(configFilePath)
 
 #irc = {
