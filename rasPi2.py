@@ -60,9 +60,9 @@ def doReadConfig(path):
 
     return(result)
 
-config_dict = doReadConfig(configFilePath)
 
 exit()
+params = doReadConfig(configFilePath)
 
 #irc = {
 #    'host' : 'irc.libera.chat',  # Fully qualified domain name of irc server
