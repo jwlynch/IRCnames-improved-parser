@@ -86,11 +86,11 @@ SOCK_STREAM is the socket type (the default).
 '''
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-print( 'Connecting to %(host)s:%(port)s...' % irc)
+print( 'Connecting to %(host)s:%(port)s...' % params["irc"])
 try:
-    s.connect((irc['host'], irc['port']))
+    s.connect((params["irc"]['host'], int(params["irc"]['port'])))
 except socket.error as se:
-    print( 'Error connecting to IRC server %(host)s:%(port)s') % irc
+    print( 'Error connecting to IRC server %(host)s:%(port)s') % params["irc"]
     print( se)
     sys.exit(1)
 
@@ -99,15 +99,15 @@ print("connect succeeded")
 #exit()
 
 #s.send('NICK %(nick)s\r\n'.encode() % user)
-encodedNick = ('NICK %(nick)s\r\n' % user).encode()
+encodedNick = ('NICK %(nick)s\r\n' % params["user"]).encode()
 s.send(encodedNick)
-print('sent NICK %(nick)s\r\n' % user)
-s.send(('USER %(username)s %(hostname)s %(servername)s :%(realname)s\r\n' % user).encode())
-print('sent USER %(username)s %(hostname)s %(servername)s :%(realname)s\r\n' % user)
-s.send(('JOIN %(channel)s\r\n' % irc).encode())
-print('sent JOIN %(channel)s\r\n' % irc)
-#s.send(('NAMES %(channel)s\r\n' % irc).encode())
-#print('sent NAMES %(channel)s\r\n' % irc)
+print('sent NICK %(nick)s\r\n' % params["user"])
+s.send(('USER %(username)s %(hostname)s %(servername)s :%(realname)s\r\n' % params["user"]).encode())
+print('sent USER %(username)s %(hostname)s %(servername)s :%(realname)s\r\n' % params["user"])
+s.send(('JOIN %(channel)s\r\n' % params["irc"]).encode())
+print('sent JOIN %(channel)s\r\n' % params["irc"])
+#s.send(('NAMES %(channel)s\r\n' % params["irc"]).encode())
+#print('sent NAMES %(channel)s\r\n' % params["irc"])
 
 read_buffer = ''
 names = []
@@ -143,7 +143,7 @@ while True:
         if command == RPL_ENDOFNAMES:
             names = nameStr.split(" ") # split names into a list
             # Display the names
-            print( '\r\nUsers in %(channel)s:' % irc)
+            print( '\r\nUsers in %(channel)s:' % params["irc"])
             for name in names:
                 print(name)
             # don't do another /names
