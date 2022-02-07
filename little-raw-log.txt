@@ -1,0 +1,10 @@
+@account=trafficjam;solanum.chat/identified :trafficjam!~qubes@118.127.126.178 PRIVMSG #linux :done
+@account=rascul;solanum.chat/identified :rascul!~rascul@user/rascul PRIVMSG #linux :thanks
+@account=cuppajoe;solanum.chat/identified :cuppajoe!~joe@ip70-171-93-122.no.no.cox.net PRIVMSG #linux :127.0.0.1
+@account=rascul;solanum.chat/identified :rascul!~rascul@user/rascul PRIVMSG #linux :127.0.0.2
+PING LAG1641996180842
+:mattallmill!~mattallmi@ip68-103-130-85.ks.ok.cox.net QUIT :Ping timeout: 250 seconds
+:zirconium.libera.chat PONG zirconium.libera.chat :LAG1641996180842
+@account=Hydro :Hydro!~Hydro@1.156.239.101 ACCOUNT Hydro
+@account=aqua;solanum.chat/identified :kish`!~aqua@user/aqua PRIVMSG #linux :espresso, gamma rays flipping bits is a myth right?
+@account=tieinv;solanum.chat/identified :tieinv!~tieinv@user/tieinv QUIT :Quit: Out!
