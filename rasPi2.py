@@ -162,3 +162,6 @@ while True:
             ping_args = " ".join(lineDict["args"])
             pong = f"PONG {ping_args}" # this is what to send to the server
             s.send(pong.encode()) # send it
+
+        if command.lower() == 'privmsg':
+            print("got a message")
