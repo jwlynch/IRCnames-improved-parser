@@ -164,4 +164,8 @@ while True:
             s.send(pong.encode()) # send it
 
         if command.lower() == 'privmsg':
-            print("got a message")
+            msg_args = lineDict['args']
+            msg_to = msg_args[0]
+            msg = msg_args[1]
+            msg_from = lineDict['prefix']
+            print(f"msg to {msg_to} from {msg_from}: {msg}")
