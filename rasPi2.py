@@ -172,3 +172,6 @@ while True:
             owner = params['user']['owner_hostmask']
             bot_nick = params['user']['nick']
             msg_from_owner_p = msg_from == owner and msg_to == bot_nick
+
+            if msg_from_owner_p:
+                print(f"msg from owner: {msg}")
