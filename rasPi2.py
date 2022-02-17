@@ -168,3 +168,6 @@ while True:
             msg_to = msg_args[0]
             msg = msg_args[1]
             msg_from = lineDict['prefix']
+
+            owner = params['user']['owner_hostmask']
+            bot_nick = params['user']['nick']
