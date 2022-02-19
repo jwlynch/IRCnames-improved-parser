@@ -12,7 +12,7 @@ for line in f:
     print(f"the line: {line_no_crlf}")
 
     # we have a line, now run the parser on that line
-    line_dict =  raw_line_parse(line)
+    line_dict =  raw_line_parse(line) # the parse function will strip the line
     # the parser will return a dict with everything about the line in it
 
     # repr() is how we turn the object into a string,
