@@ -8,3 +8,4 @@ PING LAG1641996180842
 @account=Hydro :Hydro!~Hydro@1.156.239.101 ACCOUNT Hydro
 @account=aqua;solanum.chat/identified :kish`!~aqua@user/aqua PRIVMSG #linux :espresso, gamma rays flipping bits is a myth right?
 @account=tieinv;solanum.chat/identified :tieinv!~tieinv@user/tieinv QUIT :Quit: Out!
+somecommand arg1 arg2 arg3
