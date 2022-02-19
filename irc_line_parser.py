@@ -5,8 +5,11 @@ def raw_line_parse(line):
     # pull off tags and origin words from line
     lineDict = {}
 
-    # separate lines into "words" (things between spaces)
-    llist = line.split(" ")
+    # strip the line
+    line_no_crlf = line.strip()
+
+    # separate line into "words" (things between spaces)
+    llist = line_no_crlf.split(" ")
 
     # within the line parser, when looking at llist,
     # the first (leftmost) 'word' might start with a @
