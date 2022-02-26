@@ -11,5 +11,5 @@ bot announces to the server, that it's still alive, and so never gets
 disconnected by the server for inactivity.
 
 I added comments so that the reader can understand where the parser
-begins and ends, and it also prints the output of the server, which
+begins and ends, and it also prints the output of the parser, which
 is a dict containing all details of the line.
